@@ -19,7 +19,7 @@ namespace PartyInvites
             services.AddControllersWithViews();
 
             services.AddDbContext<DataContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("PartyInvitse")));
+                options.UseSqlServer(Configuration.GetConnectionString("PartyInvites")));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
