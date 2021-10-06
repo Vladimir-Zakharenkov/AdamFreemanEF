@@ -4,10 +4,17 @@ namespace SportsStore.Models
 {
     public class DataRepository : IRepository
     {
-        private List<Product> data = new();
+        // private List<Product> data = new();
+        private DataContext context;
 
-        public IEnumerable<Product> Products => data;
+        public DataRepository(DataContext ctx) => context = ctx;
 
-        public void AddProduct(Product product) => data.Add(product);
+        public IEnumerable<Product> Products => context.Products;
+
+        public void AddProduct(Product product)
+        {
+            context.Products.Add(product);
+            context.SaveChanges();
+        }
     }
 }
