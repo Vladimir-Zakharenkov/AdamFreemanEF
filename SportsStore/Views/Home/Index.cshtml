@@ -5,6 +5,7 @@
 <div class="container-fluid mt-3">
 
     <div class="row">
+        <div class="col font-weight-bold">Id</div>
         <div class="col font-weight-bold">Name</div>
         <div class="col font-weight-bold">Category</div>
         <div class="col font-weight-bold">Purchase Price</div>
@@ -13,7 +14,8 @@
     </div>
 
     <form asp-action="AddProduct" method="post">
-        <div class="row">
+        <div class="row p-2">
+            <div class="col-1"></div>
             <div class="col"><input name="Name" class="form-control" /></div>
             <div class="col"><input name="Category" class="form-control" /></div>
             <div class="col"><input name="PurchasePrice" class="form-control" /></div>
@@ -34,15 +36,18 @@
             @foreach (Product p in Model)
             {
                 <div class="row p-2">
+                    <div class="col-1">@p.Id</div>
                     <div class="col">@p.Name</div>
                     <div class="col">@p.Category</div>
                     <div class="col text-right">@p.PurchasePrice</div>
                     <div class="col text-right">@p.RetailPrice</div>
-                    <div class="col"></div>
+                    <div class="col">
+                        <a asp-action="UpdateProduct" asp-rout-key="@p.Id"
+                   class="btn btn-outline-primary">Edit</a>
+                    </div>
                 </div>
             }
         }
 
     </div>
-
 </div>
