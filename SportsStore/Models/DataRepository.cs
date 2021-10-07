@@ -12,9 +12,17 @@ namespace SportsStore.Models
 
         public IEnumerable<Product> Products => context.Products.ToArray();
 
+        public Product GetProduct(long key) => context.Products.Find(key);
+
         public void AddProduct(Product product)
         {
             context.Products.Add(product);
+            context.SaveChanges();
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            context.Products.Update(product);
             context.SaveChanges();
         }
     }
