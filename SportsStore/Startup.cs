@@ -20,7 +20,10 @@ namespace SportsStore
             services.AddTransient<IRepository, DataRepository>();
 
             services.AddDbContext<DataContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("SportsStore")));
+                {
+                    options.EnableSensitiveDataLogging(true);
+                    options.UseSqlServer(Configuration.GetConnectionString("SportsStore"));
+                });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
