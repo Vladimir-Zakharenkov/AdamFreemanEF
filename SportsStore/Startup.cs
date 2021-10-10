@@ -19,6 +19,8 @@ namespace SportsStore
 
             services.AddTransient<IRepository, DataRepository>();
 
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+
             services.AddDbContext<DataContext>(options =>
                 {
                     options.EnableSensitiveDataLogging(true);
