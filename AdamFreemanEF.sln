@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartyInvites", "PartyInvites\PartyInvites.csproj", "{6DDBEA8B-9B54-4CCC-B15D-E0CE7F2EDF24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportsStore", "SportsStore\SportsStore.csproj", "{E5BD1464-530E-41C7-B30F-4B1EA5040190}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStore", "SportsStore\SportsStore.csproj", "{E5BD1464-530E-41C7-B30F-4B1EA5040190}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OriginalCode", "OriginalCode", "{0856B60F-E29C-4482-8773-F0BDE9FBD613}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
