@@ -14,7 +14,7 @@
     @if(ViewBag.EditId == null)
     {
         <form asp-action="AddCategory" method="post">
-            await @Html.PartialAsync("CategoryEditor", new Category())
+            @await Html.PartialAsync("CategoryEditor", new Category())
         </form>
     }
 
