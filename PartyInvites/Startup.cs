@@ -10,7 +10,7 @@ namespace PartyInvites
 {
     public class Startup
     {
-        public IConfiguration Configuration { get; set; }
+        public IConfiguration Configuration { get; }
 
         public Startup(IConfiguration config) => Configuration = config;
 
