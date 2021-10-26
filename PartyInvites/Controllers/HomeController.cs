@@ -18,12 +18,14 @@ namespace PartyInvites.Controllers
         {
             context.Responses.Add(response);
             context.SaveChanges();
+
             return RedirectToAction(nameof(Thanks),
                 new
                 {
                     Name = response.Name,
                     WillAttend = response.WillAttend
-                });
+                }
+                );
         }
 
         public IActionResult Thanks(GuestResponse response) => View(response);

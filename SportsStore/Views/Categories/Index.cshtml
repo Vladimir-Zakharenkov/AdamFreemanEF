@@ -24,7 +24,7 @@
         {
             <form asp-action="UpdateCategory" method="post">
                 <input type="hidden" name="Id" value="@c.Id" />
-                await @Html.PartialAsync("CategoryEditor", c)
+                @await Html.PartialAsync("CategoryEditor", c)
             </form>
         }
         else
@@ -33,12 +33,14 @@
                 <div class="col-1">@c.Id</div>
                 <div class="col">@c.Name</div>
                 <div class="col">@c.Description</div>
-                <div class="col-3">
+                 <div class="col-3">
                     <form asp-action="DeleteCategory" method="post">
                         <input type="hidden" name="Id" value="@c.Id" />
                         <a asp-action="EditCategory" asp-route-id="@c.Id"
-                   class="btn btn-outline-primary">Edit</a>
-                        <button type="submit" class="btn btn-outline-danger">Delete</button>
+                           class="btn btn-outline-primary">Edit</a>
+                        <button type="submit" class="btn btn-outline-danger">
+                            Delete
+                        </button>
                     </form>
                 </div>
             </div>
