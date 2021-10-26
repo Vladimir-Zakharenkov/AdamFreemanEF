@@ -1,7 +1,9 @@
 ﻿@model GuestResponse
 
 <div class="text-center mt-3">
+
     <h1>Thank you, @Model.Name</h1>
+
     @if (Model.WillAttend == true)
     {
         <div>
@@ -16,4 +18,5 @@
     }
 
     Click <a asp-action="ListResponses">here</a> to see who is coming.
+
 </div>
