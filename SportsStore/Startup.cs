@@ -10,22 +10,22 @@ namespace SportsStore
 {
     public class Startup
     {
-        public IConfiguration Configuration { get; set; }
+        public IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration) => Configuration = configuration;
 
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
 
-            services.AddTransient<IRepository, DataRepository>();
+            services.AddSingleton<IRepository, DataRepository>();
 
-            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            //services.AddTransient<ICategoryRepository, CategoryRepository>();
 
-            services.AddDbContext<DataContext>(options =>
-                {
-                    options.EnableSensitiveDataLogging(true);
-                    options.UseSqlServer(Configuration.GetConnectionString("SportsStore"));
-                });
+            //services.AddDbContext<DataContext>(options =>
+            //    {
+            //        options.EnableSensitiveDataLogging(true);
+            //        options.UseSqlServer(Configuration.GetConnectionString("SportsStore"));
+            //    });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
