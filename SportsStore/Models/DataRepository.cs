@@ -18,7 +18,7 @@ namespace SportsStore.Models
 
         public DataRepository(DataContext ctx) => context = ctx;
 
-        public IEnumerable<Product> Products => context.Products;
+        public IEnumerable<Product> Products => context.Products.ToArray();
 
         //public Product GetProduct(long key) => context.Products.Find(key);
 
