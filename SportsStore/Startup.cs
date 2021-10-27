@@ -17,15 +17,16 @@ namespace SportsStore
         {
             services.AddControllersWithViews();
 
-            services.AddSingleton<IRepository, DataRepository>();
+            //services.AddSingleton<IRepository, DataRepository>();
+            services.AddTransient<IRepository, DataRepository>();
 
             //services.AddTransient<ICategoryRepository, CategoryRepository>();
 
-            //services.AddDbContext<DataContext>(options =>
-            //    {
-            //        options.EnableSensitiveDataLogging(true);
-            //        options.UseSqlServer(Configuration.GetConnectionString("SportsStore"));
-            //    });
+            services.AddDbContext<DataContext>(options =>
+                {
+                    options.EnableSensitiveDataLogging(true);
+                    options.UseSqlServer(Configuration.GetConnectionString("SportsStore"));
+                });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
