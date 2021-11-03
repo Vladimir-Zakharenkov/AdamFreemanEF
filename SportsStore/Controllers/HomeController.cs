@@ -22,25 +22,25 @@ namespace SportsStore.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //public IActionResult UpdateProduct(long key)
-        //{
-        //    return View(key == 0 ? new Product() : repository.GetProduct(key));
-        //}
+        public IActionResult UpdateProduct(long key)
+        {
+            return View(key == 0 ? new Product() : repository.GetProduct(key));
+        }
 
-        //[HttpPost]
-        //public IActionResult UpdateProduct(Product product)
-        //{
-        //    if (product.Id == 0)
-        //    {
-        //        repository.AddProduct(product);
-        //    }
-        //    else
-        //    {
-        //        repository.UpdateProduct(product);
-        //    }
+        [HttpPost]
+        public IActionResult UpdateProduct(Product product)
+        {
+            if (product.Id == 0)
+            {
+                repository.AddProduct(product);
+            }
+            else
+            {
+                repository.UpdateProduct(product);
+            }
 
-        //    return RedirectToAction(nameof(Index));
-        //}
+            return RedirectToAction(nameof(Index));
+        }
 
         //[HttpPost]
         //public IActionResult Delete(Product product)
