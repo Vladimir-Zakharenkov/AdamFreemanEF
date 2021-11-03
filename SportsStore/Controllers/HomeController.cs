@@ -11,7 +11,7 @@ namespace SportsStore.Controllers
 
         public IActionResult Index()
         {
-            System.Console.Clear(); // если запуск не через dotnet run - закомментировать
+            //System.Console.Clear(); // если запуск не через dotnet run - закомментировать
             return View(repository.Products);
         }
 
